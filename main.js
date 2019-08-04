@@ -7,12 +7,14 @@ Convert ES5 to ES6:
 function sum(x,y){
   return x+y
 }
+  
 
 2) 
 function consoleReturn(x,y){
   console.log(x)
   return y
 }
+
 
 3) 
 var name="Alex"
@@ -35,15 +37,35 @@ var object2={
 }
 */
 
-//1) WRITE YOUR CODE UNDER THIS LINE         
+//1) WRITE YOUR CODE UNDER THIS LINE 
+sum(x,y) => {x+y}         
 
-//2) WRITE YOUR CODE UNDER THIS LINE         
+//2) WRITE YOUR CODE UNDER THIS LINE 
+consoleReturn(x,y){
+  console.log(x)
+  return y        
+}
+//3) WRITE YOUR CODE UNDER THIS LINE  
+var name="Alex"
+var age=25
+var result= 
+`<h1>My name is {name} and my age is {age}</h1>`      
 
-//3) WRITE YOUR CODE UNDER THIS LINE         
+//4) WRITE YOUR CODE UNDER THIS LINE 
+var food="Fried Chicken"
+var color="Blue"
+var object={
+  food,color
+  
+}        
 
-//4) WRITE YOUR CODE UNDER THIS LINE         
+//5) WRITE YOUR CODE UNDER THIS LINE   var object2={
+  var object2={
+    multi(a,b){
+      return a * b
+    }
+  }
 
-//5) WRITE YOUR CODE UNDER THIS LINE         
 
 
 
@@ -75,7 +97,13 @@ Output =>
 // WRITE YOUR CODE UNDER THIS LINE
 
 
-
+class Computer{
+  constructor(OS,RAM,CPU)
+  super('windows',16,17)
+}
+doubleRAM() {
+ return Computer.RAM = RAM*2;
+}
 
 
 
@@ -88,19 +116,25 @@ please fix the errors inside them
 // App Component
 import Tasks from './components/Tasks';
 
-export default class App extends Component {
+export default class App extends  Component {
   state = {
     title: 'ELIZABETH GREENE',
-    todos: ['eat', 'eat eat', 'eact again']
+    todos: ['eat', 'eat eat', 'eat again']
   };
+ //i must write here set state
+ 
   changeTitle() {
-    state.title = 'AGGREGOR ZOLDYCK'
+    this.setstate({title="AGGREGOR ZOLDYCK"})
+    
   }
   render() {
     return (
-      <h1>App Component => state.title</h1>
+      <>
+      <h1>App Component => {state.title}</h1>
       <button onClick={this.changeTitle}>Change Title</button>
       <Tasks tasks={this.todos} changeTitleFromChild={this.changeTitle} />
+      <Tasks/>
+      </>
     );
   }
 }
@@ -113,15 +147,16 @@ class Tasks extends Component {
     day: "Sat"
   };
   changeDay() {
-    day = 'Sun'
+    this.setstate({day = 'Sun'})
+    
   }
 
   render() {
     return (
       <div>
-        <h1>Tasks Component => state.day</h1>
+        <h1>Tasks Component => {state.day}</h1>
         <button onClick={this.changeDay}>Change Tasks State</button>
-        <button onClick={changeTitle}>Change App State</button>
+        <button onClick={changeTitleFromChild}>Change App State</button>
       </div>
     );
   }
